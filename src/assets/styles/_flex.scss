@@ -1,0 +1,56 @@
+.flex {
+  display: flex;
+}
+
+$flex-direction-values : (
+  row,
+  row-reverse,
+  column,
+  column-reverse
+) !default;
+
+@each $value in $flex-direction-values {
+  .direction-#{$value} {
+    flex-direction: #{$value};
+  }
+}
+
+$flex-values : (
+  nowrap,
+  wrap,
+  wrap-reverse
+) !default;
+
+@each $value in $flex-values {
+  .flex-#{$value} {
+    flex-wrap: #{$value};
+  }
+}
+
+$flex-justify-values : (
+  flex-start,
+  flex-end,
+  center,
+  space-between,
+  space-around,
+  space-evenly
+) !default;
+
+@each $value in $flex-justify-values {
+  .justify-#{$value} {
+    justify-content: #{$value};
+  }
+}
+
+$flex-align-item-values : (
+  flex-start,
+  flex-end,
+  center,
+  stretch,
+) !default;
+
+@each $value in $flex-align-item-values {
+  .align-items-#{$value} {
+    align-items: #{$value};
+  }
+}

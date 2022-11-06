@@ -1,0 +1,124 @@
+@import "_flex.scss";
+@import "_whitespace.scss";
+
+$width-container-large : 1300px;
+$width-container-medium: 1140px;
+$width-container-small: 984px;
+
+*,
+html,
+body {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+.container,
+.m-container {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+
+.container {
+  width: $width-container-small;
+  padding: 0;
+
+  @media (min-width: 990px) {
+    width: $width-container-small;
+  }
+
+  @media (min-width: 1141px) {
+    width: $width-container-medium;
+  }
+
+  @media (min-width: 1321px) {
+    width: $width-container-large;
+  }
+}
+
+.m-container {
+  @media (max-width: 989px) {
+    width: unset;
+    padding: 0 24px;
+  }
+}
+
+@for $i from 0 through 12 {
+  .col-#{$i} {
+    width: percentage($i / 12);
+    flex: 1 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+  }
+}
+
+$font-weight-values : (
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900
+) !default;
+
+@each $value in $font-weight-values {
+  .txt-weight-#{$value} {
+    font-weight: #{$value};
+  }
+}
+
+$font-size-values : (
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  24,
+  28,
+  32
+) !default;
+
+@each $value in $font-size-values {
+  .txt-#{$value} {
+    font-size: #{$value}px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+$float-values : (
+  left,
+  right
+) !default;
+
+@each $value in $float-values {
+  .float-#{$value} {
+    float: #{$value}
+  }
+}
+
+$text-align-values : (
+  left,
+  right,
+  center,
+  justify
+) !default;
+
+@each $value in $float-values {
+  .txt-align-#{$value} {
+    text-align: #{$value};
+  }
+}

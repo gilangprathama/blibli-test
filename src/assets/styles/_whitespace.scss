@@ -1,0 +1,35 @@
+$spacing-values : (
+  0,
+  4,
+  8,
+  12,
+  16,
+  20,
+  24,
+  28,
+  32,
+  48,
+  60,
+  80
+) !default;
+
+$spacing-direction : (
+  top: 't',
+  bottom: 'b',
+  left: 'l',
+  right: 'r'
+) !default;
+
+@each $size in $spacing-values {
+  @each $direction, $dir in $spacing-direction {
+    .m-#{$size} { margin: #{$size}px !important }
+    .m#{$dir}-#{$size} { margin-#{$direction}: #{$size}px !important }
+    .mv-#{$size} { margin-top: #{$size}px !important; margin-bottom: #{$size}px !important; }
+    .mh-#{$size} { margin-left: #{$size}px !important; margin-right: #{$size}px !important; }
+
+    .p-#{$size} { padding: #{$size}px !important }
+    .p#{$dir}-#{$size} { padding-#{$direction}: #{$size}px !important }
+    .pv-#{$size} { padding-top: #{$size}px !important; padding-bottom: #{$size}px !important; }
+    .ph-#{$size} { padding-left: #{$size}px !important; padding-right: #{$size}px !important; }
+  }
+}
